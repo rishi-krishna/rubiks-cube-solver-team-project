@@ -4,10 +4,12 @@
 This project is an attempt to represent and solve the 3X3 Basic Rubik's cube
 
 To solve the problem of a Rubik's cube, we implemented feature-based Q-Learning, a powerful reinforcement learning technique, as well as the utilization of a pattern database, to quantify the quality of near-finished cubes
+Q learning is a model-free reinforcement algorithm where the goal of the agent is to determine the optimal policy, or plan, to take them from the starting state to the goal state. The ‘q’ in q-learning stands for quality. Quality in this case represents how useful a given action is in gaining some future reward.
+When q-learning is performed we create what’s called a q-table or matrix that follows the shape of [state, action] and we initialize our values to zero. We then update and store our q-values after an episode. This q-table becomes a reference table for our agent to select the best action based on the q-value.
 
 This project assumes that a Rubik's cube can only execute 180 degree side turns, which greatly reduces the branching factor* of the cube's state space tree
 
-this project also attempts to reach a solution for a solved cube which has had "n random moves executed on it", this value n
+This project also attempts to reach a solution for a solved cube which has had "n random moves executed on it", this value n
 currently can be up to 5 to find a goal state for each execution, or in the range of 6-10 to be somewhat successful
 
 > "puzzle.py" includes the state representation of a Rubik's Cube, "State()", as well as a few auxillary functions
